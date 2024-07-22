@@ -1,0 +1,70 @@
+{% extends "users/dashboard/home.html" %}
+{% load static %}
+{% block head_title %}Accounts-Uttermost{% endblock %}
+{% block content %}
+    <br><br>
+    <div class="container mt-5">
+        <div class="card" style="width: 100%">
+            <h5 class="table__caption_highlighted card-header">View Applied Jobs - Select Job To Edit</h5>
+            <div class="row">
+                <p>
+                    <a href="{% url 'person_add' %}" class="btn btn-info text-white m-2">Add Application</a>
+                </p>
+                <div class="card-body mt">
+                    <table border="1" id="test" class="table table-responsive table-striped table-bordered" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Job</th>
+                                <th>Job Category</th>
+                                <th>Country</th>
+                                <th>City</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for person in people %}
+                            <tr>
+                                <td>
+                                    {% if person.status == 'Received' %}
+                                        <a href="#" class="text-danger">
+                                            <span class="fa fa-signal p-2"></span>
+                                        </a>
+                                    {% elif person.status == 'Approved' %}
+                                        <a href="#" class="text-danger">
+                                            <span class="fa fa-signal p-2"></span>
+                                        </a>
+                                    {% else %}
+                                        <a href="{% url 'person_change' person.pk %}" class="text-danger">
+                                            <span class="fa fa-edit p-2"></span>
+                                        </a>
+                                    {% endif %}
+                                    {{ person.Job.name }}
+                                </td>
+                                <td>{{ person.Job.Jobcategory.name }}</td>
+                                <td>{{ person.country.name }}</td>
+                                <td>{{ person.city.name }}</td>
+                                <td>
+                                    {% if person.status == 'Received' %}
+                                        <span class="badge badge-primary badge-pill text-uppercase">Received</span>
+                                    {% elif person.status == 'Rejected' %}
+                                        <span class="badge badge-danger badge-pill text-uppercase">{{ person.status }}</span>
+                                    {% elif person.status == 'Approved' %}
+                                        <span>
+                                            <a class="badge badge-success badge-pill text-uppercase" href="#">{{ person.status }}</a> ||
+                                            <a class="badge badge-warning badge-pill text-uppercase" href="{% url 'cheatsheet' %}">Download</a>
+                                        </span>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="5">No record yet. <a href="{% url 'person_add' %}"><span class="text-danger">Add a record</span></a></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

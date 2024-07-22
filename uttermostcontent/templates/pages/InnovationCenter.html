@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block title %}Enginnering Solutions{% endblock %}
+{% block content %}
+     <section class="slider" xmlns="http://www.w3.org/1999/html">
+			<div class="hero-slider">
+				<!-- Start Single Slider -->
+				<div class="single-slider" style="background-image:url('{% static 'Shared Photos/DSC_0660.jpg'%}')">
+                    <div class="container">
+						<div class="row">
+							<div class="col-lg-7">
+								<div class="text">
+									<h3 style="color: white">We are hands-on, tailored, customized, and prime. </h3>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Single Slider -->
+				<!-- Start Single Slider -->
+					<div class="single-slider" style="background-image:url('{% static 'Shared Photos/IMG_0938.jpg' %} ')">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-7">
+								<div class="text">
+         <p style="color: white">We provide technological innovations and solutions to display virtue, lift on ideas, and diagrams to produce innovative and market value products.</p>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Start End Slider -->
+
+			</div>
+		</section>
+  	<!-- Start Why choose -->
+		<section class="why-choose section" >
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-12">
+						<!-- Start Choose Left -->
+						<div class="choose-left">
+                          
+                        <div class="container">
+                             <div class="row">
+                                 {% for data_overviews in data_overview %}
+                            <div class="col-md-7">
+                               <h1></h1>
+                           
+                                       <p>{{data_overviews.overview|safe}}</p>
+
+
+                            </div>
+                                       <div class="col-md-5">
+                                        <img src="{{data_overviews.itemimage.url}}"   height="50%" class="img-fluid"  alt="ff"/>
+                                       </div>
+                             {% endfor %}
+                        </div>
+                        </div>
+                       
+                       
+
+<div class="container">
+    <div class="row">
+
+								<div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                                 {% for datas in data %}
+                                    <h3 class="text-danger" >{{datas.itemname}}</h3>
+									<ul class="list">
+										<li><i class="fa fa-caret-right"></i>{{datas.itemcontent|safe }} </li>
+									</ul>
+                                        {% endfor %}
+
+
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-5">
+                                    <br>
+                                    <br>
+                                      <br>
+                                    <br>
+                                        <br>
+                                    <br>
+  <a href="{% url 'profile-create' %}" >  <span class="btn btn-primary text-white font-weight-bold">👍Sigup Now</span></a>                                </div>
+
+							</div>
+						</div>
+</div>
+							
+						<!-- End Choose Left -->
+					</div>
+
+				</div>
+			</div>
+		</section>
+		<!--/ End Why choose -->
+
+
+
+{% endblock %}

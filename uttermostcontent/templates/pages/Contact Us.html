@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Enginnering Solutions{% endblock %}
+{% block content %}
+
+    <section class="slider" xmlns="http://www.w3.org/1999/html">
+        <div class="hero-slider">
+            <!-- Start Single Slider -->
+            <div class="single-slider" style="background-image:url('{% static 'Shared Photos/DSC_0660.jpg' %}')">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="text">
+                                <h3 style="color: white">We are hands-on, tailored, customized, and prime. </h3>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Slider -->
+            <!-- Start Single Slider -->
+            <div class="single-slider" style="background-image:url('{% static 'Shared Photos/IMG_0938.jpg' %} ')">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="text">
+                                <p style="color: white">We provide technological innovations and solutions to display
+                                    virtue, lift on ideas, and diagrams to produce innovative and market value
+                                    products.</p>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Start End Slider -->
+
+        </div>
+    </section>
+    <section class="appointment">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>We Are Always Ready to Help You 👌</h2>
+                        <img src="{% static 'img/section-img.png' %}" alt="#">
+                        <p> Kindly fill the form below</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-2">
+
+                    <div class="row card-body">
+                        <div class="col-lg-5 col-md-12 col-12  ">
+
+                            {#                    <form method="post">#}
+                            {#                        {% csrf_token %}#}
+                            {#                          {{ contact_form.as_p }}#}
+                            {#                        <input type="submit"   class="btn btn-primary text-white font-weight-bold mt-4" value="👍Send ">#}
+                            {#                    </form>#}
+
+                            <form action="" method="post" style="width: 23rem;">
+                                {#     <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>#}
+                                {% csrf_token %}
+                                {% for fm in   contact_form %}
+                                    <div data-mdb-input-init class="form-outline form-white mb-4">
+                                        {{ fm.label_tag }}
+                                        {{ fm }}
+                                        <small class="text-danger">
+                                            {{ fm.errors|striptags }}
+                                        </small>
+
+                                    </div>
+                                {% endfor %}
+                                {% if form.non_field_errors %}
+                                    {% for error in form.non_field_errors %}
+                                        <p class="alert alert-danger my-3">{{ error }}</p>
+                                    {% endfor %}
+                                {% endif %}
+                                <input type="submit" class="btn btn-primary text-white font-weight-bold mt-4"
+                                       value="👍Send ">
+                            </form>
+                        </div>
+                        <div class="col-lg-7 col-md-12 mb-3">
+                                {#<iframe src="https://maps.app.goo.gl/2jsaMdoBLji5NKQ66" width="600" height="450" style="border:0;"#}
+                                {#        allowfullscreen="" loading="lazy"   referrerpolicy="no-referrer-when-downgrade"></iframe>#}
+
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7364745367345!2d32.75232457496468!3d0.3669948996294059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dc7ced5e20fe1%3A0x20226f2525af7915!2sNasuuti!5e0!3m2!1sen!2sug!4v1717159411743!5m2!1sen!2sug"
+                                        width="100%" height="700"  style="border:0;" allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                                <h5 class="text-primary">P.O.BOX 150427, Nasuuti – Alongside Nakabago-Road, Mukono District - Uganda
+                                    Tel: (+256) 700215512, Tel: (+256) 788669370, </h5>
+                                {#                        <img src="{% static 'Shared Photos/WhatsApp Image 2023-03-03 at 13.05.55.jpeg' %}" alt="#">#}
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- End Appointment -->
+
+{% endblock %}

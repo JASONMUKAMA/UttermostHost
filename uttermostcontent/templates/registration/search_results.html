@@ -1,0 +1,33 @@
+{% extends "users/dashboard/home.html" %}
+{% load static %}
+{% block head_title %}Accounts-Uttermost{% endblock %}
+{% block content %}
+         <div class="card">
+ <div class="card-body">
+         <div class="row mt-5 gradient-form" >
+           <div class="container  py-5 h-100 ">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+     <div class="col-xl-10">
+                 <form class="form-inline js-form md-form mb-0" method="GET" action="{% url 'search' %}">
+
+                                      <i class="fa fa-search" aria-hidden="true"></i>
+                    <input class="form-control font-bold w-75 ml-3" name="q" value="{{ query }}" type="text" placeholder="Search" aria-label="Search">
+
+    </form>
+    {% if jobs %}
+        <ul>
+            {% for job in jobs %}
+                <li>{{ job.name |safe}}</li>
+                <p>{{ job.Description |safe }}</p>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No jobs found.</p>
+    {% endif %}
+    </div>
+    </div>
+           </div>
+         </div>
+ </div>
+         </div>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "users/dashboard/home.html" %}
+
+{% block content %}
+
+    <section class="why-choose section">
+        <div class="container" >
+            <div class="row"  style="width:100%">
+                <div class="col-lg-12">
+                    <hr/>
+                <div class="card">
+
+
+                    <div class="card-header border-bottom">
+                        <h4 class="card-title"><i data-feather="award" class="font-medium-2"></i>🫠 Apply Here </h4>
+                        <p>Kindly Fill The Form Below!</p>
+                        <br>
+                        <p class="text-danger font-bold">Note That all fields are mandatory!</p>
+                        <div class="card-title float-end">
+                            <a class="btn  btn-primary text-white float-right " href="{% url 'person_changelist' %}">🤖 View
+                                View Job Status</a>
+                        </div>
+                    </div>
+
+
+                    <form method="post" class="card-body" id="personForm" data-cities-url="{% url 'ajax_load_cities' %}"
+                          enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group  " style="text-transform: capitalize; font-size: medium">
+                            {% for fm in form %}
+
+                                <div class="form-group  " style="text-transform: capitalize; font-size: medium">
+                                    {{ fm.label_tag }}
+                                    {{ fm }}
+                                    <small
+                                        class="text-danger">{{ fm.errors|striptags }}</small>
+                                </div>
+                            {% endfor %}
+                            {% if form.non_field_errors %}
+                                {% for error in form.non_field_errors %}
+                                    <p class="alert alert-danger my-3">{{ error }}</p>
+                                {% endfor %}
+
+
+                            {% endif %}
+
+                            {#                        <table class="table">#}
+                            {#                            {{ form.as_table }}#}
+                            {#                            <small class="text-danger">{{ form.errors|striptags }}</small>#}
+                            {##}
+                            {#                        </table>#}
+                            <button class="btn btn-primary text-white font-weight-bold" type="submit">👍Submit</button>
+
+                        </div>
+                    </form>
+
+</div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+{% endblock %}

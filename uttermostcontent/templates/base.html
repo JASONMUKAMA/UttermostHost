@@ -1,0 +1,541 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="Site keywords here">
+    <meta name="description" content="">
+    <meta name='copyright' content=''>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Title -->
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'img/logo/UtterMost Logo.jpg' %}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+          rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" rel="stylesheet">
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <!-- icofont CSS -->
+    <link rel="stylesheet" href="{% static 'css/icofont.css' %}">
+    <!-- Slicknav -->
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}">
+    <!-- Datepicker CSS -->
+    <link rel="stylesheet" href="{% static 'css/datepicker.css' %}">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <!-- Medipro CSS -->
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+
+    <!-- Google Fonts -->
+    <link rel='stylesheet'
+          href='https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&amp;display=swap'>
+    <!-- Font Awesome CSS -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css'>
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="{% static 'nav/style.css' %}">
+
+    <!-- Demo CSS -->
+    <link rel="stylesheet" href="{% static 'nav/demo.css' %}">
+    <style>
+        @media (min-width: 992px) {
+            .dropdown:hover .dropdown-menu {
+                display: block;
+            }
+        }
+        .media-container video,
+        .media-container audio {
+            width: 100%;
+            height: auto;
+        }
+
+        
+        .vertical-menu {
+            width: 100%;
+            height: 500px;
+            overflow-y: auto;
+        }
+
+        .vertical-menu a {
+            background-color: #eee;
+            color: black;
+            display: block;
+            padding: 12px;
+            text-decoration: none;
+        }
+
+        .vertical-menu a:hover {
+            background-color: #ccc;
+        }
+
+        .vertical-menu a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        ul li a + a {
+            margin-left: 0px;
+        }
+
+        ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            width: 100%;
+            height: 4px;
+            background-color: #0e90d2;
+            transform-origin: bottom right;
+            transition: transform 1s ease;
+            transform: scaleX(0);
+        }
+
+        ul a:hover::after {
+            transform-origin: bottom center;
+            transform: scaleX(1);
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+<!-- Preloader -->
+<div class="preloader">
+    <div class="loader">
+        <div class="loader-outter"></div>
+        <div class="loader-inner"></div>
+
+        <div class="indicator">
+            <svg width="16px" height="12px">
+                <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+            </svg>
+        </div>
+    </div>
+</div>
+<!-- End Preloader -->
+<!-- Header Area -->
+<header class="header">
+    <!-- Topbar -->
+    <div class="topbar">
+
+    </div>
+
+</header>
+<!-- End Topbar -->
+<!-- Header Inner -->
+<div class="header-inner">
+    <div class="container">
+        <div class="inner">
+            <div class="row">
+
+                <div class="col-lg-12 col-md-9 col-12">
+                    <!-- Main Menu -->
+                    <div class="row text-lg-center">
+                        <nav class="mb-5 navbar navbar-expand-lg navbar-light bg-body-tertiary fixed-top shadow"
+                             style="background-color: white">
+                            <a class="navbar-brand" href="{% url 'index' %}">
+                                <img src="{% static 'img/logo/UtterMost Logo.jpg' %}" class="rounded-4 w-25"
+                                     alt=""/></a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+                                <ul class="navbar-nav mr-auto mb-5 mb-lg-0" style="color: #0b0b0b; width:100%;">
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" aria-current="page" href="{% url 'index' %}">Home </a>
+                                    </li>
+                                    <li class="nav-item dropdown dropdown-mega position-static">
+                                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown"
+                                           data-bs-auto-close="outside">Solutions</a>
+                                        <div class="dropdown-menu shadow ">
+                                            <div class="mega-content px-4 scrollable">
+                                                <div class="container-fluid">
+                                                    <div class="row  vertical-menu">
+                                                        <div class="col-lg-2 col-sm-6 col-md-3 py-4">
+                                                            <h5>Electronic solutions</h5>
+                                                            <div class="list-group">
+                                                                <a class="list-group-item"
+                                                                   href="{% url 'electronicsolutions' %}"><span
+                                                                        class="fas fa-atom"> Engineering services</span></a>
+                                                                <a class="list-group-item" href="#"><span
+                                                                        class="fas fa-journal-whills"> Photonic devices</span>
+                                                                </a>
+                                                                <a class="list-group-item" href="#"><span
+                                                                        class="fas fa-bolt"> Laser devices</span> </a>
+                                                                <a class="list-group-item" href="#"><span
+                                                                        class="fas fa-notes-medical"> Biomed devices</span></a>
+                                                                <a class="list-group-item" href="#"><span
+                                                                        class="fas fa-rss">  UT-Lighting systems</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-2 col-sm-6 col-md-3 py-4">
+                                                            <h5>ICT Solutions</h5>
+                                                            <div class="list-group">
+                                                                <a class="list-group-item"
+                                                                   href="{% url 'ictsolutions' %}"><span
+                                                                        class="fas fa-phone"> App development</span></a>
+                                                                <a class="list-group-item" href="#"><span
+                                                                        class="fas fa-cloud"> Cloud Platform</span> </a>
+                                                                <a class="list-group-item" href="#"><span
+                                                                        class="fas fa-database"> Data Analysis</span>
+                                                                </a>
+                                                                <a class="list-group-item" href="#"><span
+                                                                        class="fas fa-suitcase"> Utterbox</span></a>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-2 col-sm-6 col-md-3 py-4">
+                                                            <h5>Edu Solutions</h5>
+                                                            <div class="list-group">
+                                                                <a class="list-group-item"
+                                                                   href="{% url 'eduSolutions' %}"><span
+                                                                        class="fas fa-vcard"> Edu vision 2062</span></a>
+                                                                <a class="list-group-item" href="#"><span
+                                                                        class="fas fa-industry"> Jewstle Innovations</span></a>
+                                                                <a class="list-group-item" href="#"><span
+                                                                        class="fas fa-lightbulb-o"> Jewstle Research labs </span>
+                                                                </a>
+                                                                <a class="list-group-item" href="#"><span
+                                                                        class="fas fa-cloud"> Utterlife Partnership</span></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-2 col-sm-6 col-md-3 py-4">
+                                                            <h5>Media Solutions </h5>
+                                                            <div class="list-group">
+                                                                <a class="list-group-item"
+                                                                   href="{% url 'mediasolutions' %}"><span
+                                                                        class="fas fa-ellipsis-h"> UTS Fintech</span>
+                                                                </a>
+                                                                <a class="list-group-item" href="#"><span
+                                                                        class="fas icofont-plant"> UTS Agritech</span></a>
+                                                                <a class="list-group-item" href="#"><span
+                                                                        class="fas fa-car"> UTS Transporters</span> </a>
+                                                                <a class="list-group-item" href="#"><span
+                                                                        class="fas fa-signal"> UTS Network</span></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 col-sm-6 col-md-3 py-4">
+                                                            <h5>Consultancy Services </h5>
+                                                            <div class="list-group">
+                                                                <a class="list-group-item"
+                                                                   href="{% url 'consultancysolutions' %}"><span
+                                                                        class="fas icofont-bell"> Digital Consulting</span>
+                                                                </a>
+                                                                <a class="list-group-item" href="#"><span
+                                                                        class="fas icofont-calendar"> Decision & Risk Analysis </span></a>
+                                                                <a class="list-group-item" href="#"><span
+                                                                        class="fas icofont-comment"> Operations Research</span>
+                                                                </a>
+                                                                <a class="list-group-item" href="#"><span
+                                                                        class="fas icofont-technorati"> Technology & Entrepreneurship </span></a>
+                                                                <a class="list-group-item" href="#"><span
+                                                                        class="fas icofont-man-in-glasses"> Policy & Strategy VAS Planning</span></a>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                                           data-bs-auto-close="outside">Industries </a>
+                                        <ul class="dropdown-menu shadow">
+                                            <li><a class="dropdown-item" href="{% url 'industries' %}">Education </a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">Technology</a></li>
+                                            <li><a class="dropdown-item" href="#">Communications & Media</a></li>
+                                            <li><a class="dropdown-item" href="#">Fintech & Financial Services</a></li>
+                                            <li><a class="dropdown-item" href="#">Agriculture</a></li>
+                                            <li><a class="dropdown-item" href="#">Pharma care</a></li>
+                                            <li><a class="dropdown-item" href="#">Transportation</a></li>
+                                            <li>
+                                                <hr class="dropdown-divider">
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">Research and Training</a></li>
+                                            <li><a class="dropdown-item" href="#">TVET & Productions</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                                           data-bs-auto-close="outside">About Us </a>
+                                        <ul class="dropdown-menu shadow">
+                                            <li><a class="dropdown-item" href="{% url 'aboutpage' %}">Our Team </a></li>
+                                            <li><a class="dropdown-item" href="pages/AboutUs.html">Social Impact</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="#">Communications & Media</a></li>
+                                            <li><a class="dropdown-item" href="#">Insights & Locations</a></li>
+                                            <li><a class="dropdown-item" href="#">Technology Partners</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link" aria-current="page" href="{% url 'innovationcenter' %}">Innovation
+                                            Center </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" aria-current="page" href="{% url 'careers' %}">Careers </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" aria-current="page" href="{% url 'investorrelations' %}">Investor
+                                            Relations </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" aria-current="page" href="{% url 'contact_us' %}">Contact
+                                            Us </a>
+                                    </li>
+                                    <li class="nav-item pr-2">
+                                        <a class="nav-link" aria-current="page" href="#">Change of Languages </a>
+                                    </li>
+
+                                </ul>
+                                <form class="form-inline js-form md-form mb-0" method="GET" action="{% url 'search' %}">
+
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                    <input class="form-control font-bold w-75 ml-3" name="q" value="{{ query }}"
+                                           type="text" placeholder="Search" aria-label="Search">
+{% if request.user.is_authenticated and not request.user.is_staff %}
+    <a class="nav-link" aria-current="page" href="{% url 'dashboard' %}">
+        <img src="{{ request.user.user_avatar.url }}" alt="avatar"
+             class="rounded-circle img-fluid"
+             style="width: 20px; height: 20px;"> {{ request.user.first_name }}
+    </a>
+{% endif %}
+
+{% if request.user.is_staff %}
+    <a class="nav-link" aria-current="page" href="{% url 'admin:index' %}">
+        <img src="{{ request.user.user_avatar.url }}" alt="avatar"
+             class="rounded-circle img-fluid"
+             style="width: 20px; height: 20px;"> {{ request.user.first_name }}
+    </a>
+{% endif %}
+
+
+                                </form>
+                                <!-- Links -->
+
+
+                            </div>
+
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+            <!--/ End Main Menu -->
+        </div>
+
+    </div>
+</div>
+</div>
+
+<!--/ End Header Inner -->
+</header>
+{% block content %}{% endblock %}
+<!-- Footer Area -->
+<footer id="footer" class="footer ">
+    <!-- Footer Top -->
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-footer">
+                        <h2>About Us</h2>
+                        <p></p>
+                        <!-- Social -->
+                        <ul class="social">
+                           <li> <a href="https://www.facebook.com/YourPage" target="_blank"><i class="fa fa-facebook-official"></i></a></li>
+                            <li><a href="https://twitter.com/YourTwitter" target="_blank"><i class="icofont-twitter"></i></a></li>
+                            <li> <a href="mailto:jasonmukama@gmail.com" target="_blank"><i class="icofont-google-plus"></i></a></li>
+                        </ul>
+                        <!-- End Social -->
+                    </div>
+
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-footer f-link">
+                        <h2>Quick Links</h2>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <ul>
+                                        <li class="day"><a href="{% url 'login' %}"><i class="fa fa-suitcase" aria-hidden="true"></i>Login</a></li>
+                            <li class="day"><a href="{% url 'profile-create' %}"><i class="fa fa-creative-commons" aria-hidden="true"></i>Sign Up</a></li>
+                                    <li><a href="{% url 'index' %}"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a></li>
+                                    <li><a href="{% url 'aboutpage' %}"><i class="fa fa-caret-right" aria-hidden="true"></i>About Us</a>
+                                     <li><a href="{% url 'eduSolutions' %}"><i class="fa fa-caret-right" aria-hidden="true"></i>Solutions</a></li>
+                                    <li><a href="{% url 'industries' %}"><i class="fa fa-caret-right" aria-hidden="true"></i>Industries</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <ul>
+                                  <li><a href="{% url 'innovationcenter' %}"><i class="fa fa-caret-right" aria-hidden="true"></i>Innovation Center</a></li>
+                                    <li><a href="{% url 'careers' %}"><i class="fa fa-caret-right" aria-hidden="true"></i>Careers</a>
+                                     <li><a href="{% url 'investorrelations' %}"><i class="fa fa-caret-right" aria-hidden="true"></i>Investor Relations</a></li>
+                                    <li><a href="{% url 'contact_us' %}"><i class="fa fa-caret-right" aria-hidden="true"></i>Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-footer">
+                        <h2>Open Hours</h2>
+
+                        <ul class="time-sidual">
+                            <li class="day">Monday - Friday <span>8.00-20.00</span></li>
+                            <li class="day">Saturday <span>9.00-1:00</span></li>
+                            <li class="day">Monday - Thusday <span>9.00-15.00</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-footer">
+                        <h2>Newsletter</h2>
+                        <p>subscribe to our newsletter to get all our news in your inbox.</p>
+                        <form method="post" action="{% url 'index' %}">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                {#                {{ form.email.label_tag }}#}
+                                <div class="row">
+                                    <div class="col-md-8">
+
+    {{ subscription_form.email }}
+                                    </div>
+                                </div>
+
+                            </div>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                        <div class="mt-3">
+                            {% for message in messages %}
+                                <div class="alert alert-success">{{ message }}</div>
+
+                            {% endfor %}
+                            {% if form.errors %}
+                                <div class="errors">
+
+                                    {% for field, errors in form.errors.items %}
+                                        {% for error in errors %}
+                                            <div class="alert alert-danger">{{ error }}</div>
+                                        {% endfor %}
+                                    {% endfor %}
+
+                                </div>
+                                </div>
+                            {% endif %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--/ End Footer Top -->
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <div class="copyright-content">
+                        <p>© {% now "N j, Y" %}. Utter Most </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ End Copyright -->
+</footer>
+<!--/ End Footer Area -->
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js'></script>
+<script>   // (c) 2020 Written by Simon Köhler in Panama
+// github.com/koehlersimon
+// simon-koehler.com
+<script type="text/javascript" src="{% static 'bootstrap-datetimepicker/js/bootstrap-datetimepicker.js' %}"
+        charset="UTF-8"></script>
+<script type="text/javascript" src="{% static 'bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.fr.js' %}"
+        charset="UTF-8"></script>
+<!-- jquery Min JS -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<!-- jquery Migrate JS -->
+<script src="{% static 'js/jquery-migrate-3.0.0.js' %}"></script>
+<!-- jquery Ui JS -->
+<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+<!-- Plyr CSS -->
+<link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+
+<!-- Plyr JavaScript -->
+<script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.js"></script>
+
+<script>
+    document.addEventListener('click', function (e) {
+        // Hamburger menu
+        if (e.target.classList.contains('hamburger-toggle')) {
+            e.target.children[0].classList.toggle('active');
+        }
+
+    })
+    document.addEventListener('DOMContentLoaded', function() {
+        const players = Plyr.setup('.plyr__video-embed, .plyr__audio-embed');
+    });
+    
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js"></script>
+<!-- Easing JS -->
+<script src="{% static 'js/easing.js' %}"></script>
+<!-- Color JS -->
+<script src="{% static 'js/colors.js' %}"></script>
+<!-- Popper JS -->
+<script src="{% static 'js/popper.min.js' %}"></script>
+<!-- Bootstrap Datepicker JS -->
+<script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+<!-- Jquery Nav JS -->
+<script src="{% static 'js/jquery.nav.js' %}"></script>
+<!-- Slicknav JS -->
+<script src="{% static 'js/slicknav.min.js' %}"></script>
+<!-- ScrollUp JS -->
+<script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+<!-- Nice select JS -->
+<script src="{% static 'js/niceselect.js' %}"></script>
+<!-- Tilt Jquery JS -->
+<script src="{% static 'js/tilt.jquery.min.js' %}"></script>
+<!-- Owl Carousel JS -->
+<script src="{% static 'js/owl-carousel.js' %}"></script>
+<!-- counterpart JS -->
+<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+<!-- Steller JS -->
+<script src="{% static 'js/steller.js' %}"></script>
+<!-- Wow JS -->
+<script src="{% static 'js/wow.min.js' %}"></script>
+<!-- Magnific Popup JS -->
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<!-- Counter Up CDN JS -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!-- Main JS -->
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

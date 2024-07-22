@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UtterMost User Accounts 🏦 </title>
+    <link rel="icon" href="{% static 'img/logo/UtterMost Logo.jpg' %}">
+    <!-- Font Awesome -->
+{#    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>#}
+     <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js">
+        </script>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
+    rel="stylesheet"
+    />
+            <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+            <link href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" rel="stylesheet">
+            <!-- Nice Select CSS -->
+            <link rel="stylesheet" href="{% static 'css/nice-select.css'%}">
+            <!-- Font Awesome CSS -->
+            <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+            <!-- icofont CSS -->
+            <link rel="stylesheet" href="{% static 'css/icofont.css' %}">
+            <!-- Slicknav -->
+            <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}">
+            <!-- Owl Carousel CSS -->
+            <link rel="stylesheet" href="{% static 'css/owl-carousel.css'%}">
+            <!-- Datepicker CSS -->
+            <link rel="stylesheet" href="{% static 'css/datepicker.css'%}">
+            <!-- Animate CSS -->
+            <link rel="stylesheet" href="{% static 'css/animate.min.css'%}">
+            <!-- Magnific Popup CSS -->
+            <link rel="stylesheet" href="{% static 'css/magnific-popup.css'%}">
+            <!-- Medipro CSS -->
+            <link rel="stylesheet" href="{% static 'css/normalize.css'%}">
+            <link rel="stylesheet" href="{% static 'style.css'%}">
+            <link rel="stylesheet" href="{% static 'css/responsive.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/css/mdb.min.css" integrity="sha512-hj9rznBPdFg9A4fACbJcp4ttzdinMDtPrtZ3gBD11DiY3O1xJfn0r1U5so/J0zwfGOzq9teIaH5rFmjFAFw8SA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" />
+{#<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css" rel="stylesheet" />#}
+
+     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+
+{#    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>#}
+
+
+
+<script>
+    $(document).ready(function() {
+         // Override DataTables default error handling
+    $.fn.dataTable.ext.errMode = 'none';
+
+        $('#test').DataTable();
+
+        DataTable.ext.errMode = function (s, tn, msg) {
+ console.log(msg, tn);
+};
+    }
+
+    );
+
+</script>
+
+    <style>
+
+.navbar .dropdown-menu a:hover {
+    color: #616161 !important;
+}
+.darken-grey-text {
+    color: #2E2E2E;
+}
+
+.bg-image-vertical {
+position: relative;
+overflow: hidden;
+background-repeat: no-repeat;
+background-position: right center;
+background-size: auto 100%;
+}
+
+@media (min-width: 1025px) {
+.h-custom-2 {
+height: 100%;
+}
+}
+
+.gradient-custom-2 {
+/* fallback for old browsers */
+background: #fccb90;
+
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+
+@media (min-width: 768px) {
+.gradient-form {
+height: 100vh !important;
+}
+}
+@media (min-width: 769px) {
+.gradient-custom-2 {
+border-top-right-radius: .3rem;
+border-bottom-right-radius: .3rem;
+}
+}
+    </style>
+
+
+
+</head>
+<body  class="hm-gradient">
+
+            <!--Navbar -->
+            <nav class="mb-5 navbar navbar-expand-lg navbar-light bg-body-tertiary fixed-top shadow" style="background-color: white">
+                 <a class="navbar-brand" href="{% url 'index' %}">
+                      <img src="{% static 'img/logo/UtterMost Logo.jpg' %}" class="rounded-4 w-25"
+                   alt="" /></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+              <a class="nav-link" href="{% url 'index' %}">
+                <i class="fas fa-globe fa-lg"></i>
+          <span class="badge rounded-pill badge-notification bg-danger"></span>
+                     <span class="">Site</span>
+        </a>
+          </li>
+                      {% if request.user.is_authenticated %}
+
+          <li class="nav-item  pl-2">
+                  <a class="nav-link" href="{% url 'dashboard' %}">
+                <i class="fas fa-dashboard fa-lg"></i>
+          <span >Dashboard</span>
+                  </a>
+          </li>
+                                <li class="nav-item  pl-2">
+                  <a class="nav-link" href="{% url 'person_changelist' %}">
+                <i class="fas fa-briefcase fa-lg"></i>
+          <span >Job Applications</span>
+                  </a>
+          </li>
+          {% else %}
+          <li class="nav-item pl-2">
+                  <a class="nav-link" href="{% url 'profile-create' %}">
+                <i class="fas fa-signal fa-lg"></i>
+          <span >Signup</span>
+                  </a>
+            </li>
+            <li class="nav-item pl-2">
+                      <a class="nav-link"  href="{% url 'login' %}">
+                <i class="fas  fa-sign-in fa-lg"></i>
+          <span >Login</span>
+                  </a>
+
+            </li>
+            {% endif %}
+
+
+
+                          <li class="nav-item  pl-2">
+                  <a class="nav-link" href="{% url 'job_list' %}">
+                <i class="fas   fa-book fa-lg"></i>
+          <span >Jobs</span>
+                  </a>
+          </li>
+
+        </ul>
+                       <!-- Links -->
+                    <!-- Search form -->
+                    <form class="form-inline js-form md-form mb-0">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <input class="form-control font-bold w-75 ml-3"  name="myText" type="text" placeholder="Search" aria-label="Search">
+                    </form>
+
+                    <ul class="navbar-nav ml-auto">
+ {% if request.user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa fa-gear">
+                               </i> Settings</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+
+
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="{{ request.user.user_avatar.url}}" alt="avatar"
+
+              class="rounded-circle img-fluid" style="width: 20px; height: 20px; /">
+                                {% if full_name %}
+                          {{full_name}}
+                          {% else %}
+                           {{request.user.last_name }} {{request.user.first_name}}
+                          {% endif %}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right dropdown-cyan" aria-labelledby="navbarDropdownMenuLink-4">
+                                 <a class="dropdown-item" href="{% url 'profile-list' %}">Profile</a>
+{#                                <a class="dropdown-item" href="#">My account</a>#}
+
+                                 <form method="post" action="{% url 'logout' %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn-link">Logout</button>
+                                     {% endif %}
+
+                            </form>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+
+  {% if messages %}
+  {% for message in messages %}
+  <p class="alert alert-dark mx-4 mt-3">{{message}}</p>
+  {% endfor %}
+  {% endif %}
+
+  {% block content %}
+
+
+
+
+
+
+
+
+
+
+
+  {% endblock content %}
+
+ <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js'></script>
+            <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js"></script>
+            <!-- Easing JS -->
+            <script src="{% static 'js/easing.js'%}"></script>
+            <!-- Color JS -->
+            <script src="{% static 'js/colors.js'%}"></script>
+              <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+            <!-- Popper JS -->
+            <script src="{% static 'js/popper.min.js'%}"></script>
+            <!-- Bootstrap Datepicker JS -->
+            <script src="{% static 'js/bootstrap-datepicker.js'%}"></script>
+            <!-- Jquery Nav JS -->
+            <script src="{% static 'js/jquery.nav.js'%}"></script>
+            <!-- Slicknav JS -->
+            <script src="{% static 'js/slicknav.min.js'%}"></script>
+            <!-- ScrollUp JS -->
+            <script src="{% static 'js/jquery.scrollUp.min.js'%}"></script>
+            <!-- Nice select JS -->
+            <script src="{% static 'js/niceselect.js'%}"></script>
+            <!-- Tilt Jquery JS -->
+            <script src="{% static 'js/tilt.jquery.min.js'%}"></script>
+            <!-- Owl Carousel JS -->
+            <script src="{% static 'js/owl-carousel.js'%}"></script>
+            <!-- counterpart JS -->
+            <script src="{% static 'js/jquery.counterup.min.js'%}"></script>
+            <!-- Steller JS -->
+            <script src="{% static 'js/steller.js'%}"></script>
+            <!-- Wow JS -->
+            <script src="{% static 'js/wow.min.js'%}"></script>
+            <!-- Magnific Popup JS -->
+            <script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>
+            <!-- Counter Up CDN JS -->
+            <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+            <!-- Bootstrap JS -->
+            <script src="{% static 'js/bootstrap.min.js'%}"></script>
+            <!-- Main JS -->
+            <script src="{% static 'js/main.js'%}"></script>
+
+
+
+            <script>
+   document.addEventListener('click',function(e){
+      // Hamburger menu
+      if(e.target.classList.contains('hamburger-toggle')){
+        e.target.children[0].classList.toggle('active');
+      }
+
+    });
+
+
+        $("#id_country").change(function () {
+            var url = $("#personForm").attr("data-cities-url");
+            var countryId = $(this).val();
+
+            $.ajax({
+                url: url,
+                data: {
+                    'country': countryId
+                },
+                success: function (data) {
+                    $("#id_city").html(data);
+                }
+            });
+
+        });
+
+
+
+
+            //- Using an anonymous function:
+document.getElementById("clickMe").onclick = function (swal) {
+     swal("You are not regstered",
+                 "Kindly Register to use this feature!",
+                 "warning", {
+                dangerMode: true,
+                {#buttons: true,#}
+                closeOnClickOutside: false,
+                timer: 20000,
+            });
+};
+
+document.querySelector('.js-form')?.addEventListener('submit', e => {
+  e.preventDefault();
+  {#alert(#}
+  {#    e.currentTarget.myText.value#}
+  {##}
+  {##}
+  {#);#}
+  swal("You are not regstered",
+                 "Kindly Register to use this feature!",
+                 "warning", {
+                dangerMode: true,
+                {#buttons: true,#}
+                closeOnClickOutside: false,
+                timer: 20000,
+            });
+});
+
+        </script>
+
+</body>
+</html>

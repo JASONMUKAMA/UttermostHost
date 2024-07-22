@@ -1,0 +1,63 @@
+{% extends "users/dashboard/home.html" %}
+{% load static %}
+{% block head_title %}Accounts-Uttermost{% endblock %}
+{% block content %}
+         <div class="card">
+ <div class="card-body">
+         <div class="row mt-5 gradient-form" >
+  <div class="container  py-5 h-100 ">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+
+                <div class="text-center">
+                  <img src="{% static 'img/logo/UtterMost Logo.jpg' %}"
+                    style="width: 185px;" alt="logo">
+                  <h4 class="mt-1 mb-5 pb-1">Login To Get Started 😀</h4>
+                </div>
+
+                 <form action="" method="post" style="width: 23rem;" novalidate>
+{#     <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>#}
+          {% csrf_token %}
+          {% for fm in form %}
+             <div data-mdb-input-init class="form-outline form-white mb-4">
+           {{fm.label_tag}}
+               {{fm}}
+                <small class="text-warning">
+                    {{fm.errors|striptags}}
+           </small>
+
+           </div>
+          {% endfor %}
+          {% if form.non_field_errors %}
+          {% for error in form.non_field_errors %}
+          <p class="alert alert-danger my-3">{{error}}</p>
+          {% endfor %}
+          {% endif %}
+          <button type="submit" class="btn btn-dark btn-block mt-4">login</button>
+         </form>
+                  <br>
+                <h5>Forgot password ? Click <a href="{% url 'password_reset' %}">Here</a></h5>
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <h4 class="mb-4">We are more than just a company</h4>
+                <p class="large mb-0" style="color: white">At Uttermost, we are proud to be an equal opportunity employer and are committed to creating a diverse and inclusive workplace. All aspects of employment, including the decision to hire and promote, are based on applicants’ qualifications,
+                    merits, competence, and performance without regard to any characteristic related to diversity.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Section: Design Block -->
+</div>
+    </div>
+
+{% endblock content %}

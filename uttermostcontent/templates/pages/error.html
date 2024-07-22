@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 Internal Server Error</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+            font-family: Arial, sans-serif;
+        }
+        .error-container {
+            text-align: center;
+        }
+        .error-eyes {
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        .error-eyes::before,
+        .error-eyes::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #000;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .error-eyes::before {
+            left: 10px;
+        }
+        .error-eyes::after {
+            right: 10px;
+        }
+        .error-message {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-eyes"></div>
+        <div class="error-message">Oops! Something went wrong.<br>Our server is feeling a bit dizzy.</div>
+    </div>
+</body>
+</html>

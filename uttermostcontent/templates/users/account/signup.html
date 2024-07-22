@@ -1,0 +1,59 @@
+{% extends "users/dashboard/home.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="card">
+            <div class="row">
+                <div class="col-md-7">
+                    <h3 style="font-family: Georgia, serif; font-size: 40px;" class="text-center my-5">
+                        Signup Here
+                        😀</h3>
+                    <h5 class="pl-lg-3">Note That:</h5>
+                    <ul>
+                        <li class="p-2">Your password can’t be too similar to your other personal information.</li>
+    <li class="p-2">Your password must contain at least 8 characters.</li>
+    <li class="p-2">Your password can’t be a commonly used password.</li>
+    <li class="p-2">Your password can’t be entirely numeric.</li>
+                    </ul>
+
+                </div>
+                <div class="col-md-5">
+                    <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg"
+                         class="w-50  rounded-4"
+                         alt=""/>
+                </div>
+            </div>
+
+
+            <div class="card-body">
+
+                <div class="col-md-10 mx-auto">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% for fm in form %}
+                            <div class="form-group mb-2 " style="text-transform: capitalize; font-size: medium">
+                                {{ fm.label_tag }} {{ fm }} <small class="text-danger">{{ fm.errors|striptags }}</small>
+                            </div>
+                        {% endfor %}
+                        {% if form.non_field_errors %}
+                            {% for error in form.non_field_errors %}
+                                <p class="alert alert-danger my-3">{{ error }}</p>
+                            {% endfor %}
+                        {% endif %}
+                        <button type="submit" class="btn btn-dark btn-block mt-4">Signup</button>
+                    </form>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- Register buttons -->
+
+    </div>
+
+
+
+{% endblock content %}

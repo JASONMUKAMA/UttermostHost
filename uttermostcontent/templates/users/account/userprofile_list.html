@@ -1,0 +1,95 @@
+{% extends "users/dashboard/home.html" %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+<style>
+    .gradient-custom {
+/* fallback for old browsers */
+background: #343434;
+
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to right bottom, rgb(41, 41, 41), rgb(126, 123, 123));
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right bottom, rgb(21, 20, 18), rgb(195, 195, 195))
+}
+</style>
+
+  <div class="container m-5 py-5">
+        {% if request.user.is_authenticated %}
+    <div class="row">
+     <div class="col-lg-7 ">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row">
+
+              <div class="col-sm-3">
+                <p class="mb-0">Full Name</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{ request.user.first_name }} - {{ request.user.last_name }}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Email</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{ request.user.email }}</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Phone</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{ request.user.phone }}</p>
+              </div>
+            </div>
+            <hr>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Address</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{ request.user.address }}</p>
+              </div>
+            </div>
+                          <hr>
+                           <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Date Of Birth</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{ request.user.birthdate |date:"F j, Y" }}</p>
+              </div>
+            </div>
+              <hr>
+                                         <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Edit Profile</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0"><a class="btn btn-outline-success btn-sm" href="{% url 'profile-update' user.pk %}">Update Profile</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    <div class="col-md-5">
+
+        <a class="nav-link" aria-current="page" href="{% url 'dashboard' %}">
+            <img src="{{ request.user.user_avatar.url}}" alt="avatar"  style="width: 100%; height: 100%" class="image img-fluid" />
+        </a>
+    </div>
+        {% endif %}
+    </div>
+
+  </div>
+{% endblock %}

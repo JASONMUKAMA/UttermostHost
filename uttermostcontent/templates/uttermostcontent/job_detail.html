@@ -1,0 +1,37 @@
+{% extends "users/dashboard/home.html" %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+     <div class="container m-5 py-5">
+         <div class="card mb-4">
+    <div class="row">
+     <div class="col-lg-12 card-header">
+         <h3>Job Details</h3>
+         {% if request.user.is_authenticated %}
+         <a href="{% url 'person_changelist' %}" class="btn btn-success">Apply Now</a>
+         {% else %}
+            <a href="{% url 'login' %}">Apply Now</a>
+         {% endif %}
+
+     </div>
+      <div class="row">
+          <div class="card-body text-center">
+    <h3>Job : <a class="text-danger">{{ job }}</a></h3>
+    <p>Date Posted: {{ job.created_on | naturaltime }}</p>
+
+    <h4>Category</h4>
+    <ul>
+
+        <li class="text-danger">{{ job.Jobcategory}}</li>
+            {{ job.Description | safe }}
+
+    </ul>
+
+
+          </div>
+      </div>
+    </div>
+         </div>
+     </div>
+    
+{% endblock %}

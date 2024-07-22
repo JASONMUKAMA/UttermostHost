@@ -1,0 +1,10 @@
+<option value="">---------</option>
+{% for JobCategory in jobcategories %}
+<option value="{{ JobCategory.pk }}">{{ JobCategory.name }}</option>
+{% endfor %}
+{% for JobSubCategory in jobsubcategories %}
+<option value="{{ JobSubCategory.pk }}">{{ JobSubCategory.name }}</option>
+{% endfor %}
+{% for city in cities %}
+<option value="{{ city.pk }}">{{ city.name }}</option>
+{% endfor %}
